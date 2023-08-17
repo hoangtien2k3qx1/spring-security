@@ -66,6 +66,8 @@ public class AuthController {
         user.setEmail(signUpDto.getEmail());
         user.setPassword(passwordEncoder.encode(signUpDto.getPassword()));
 
+        // lưu ý: phải add "ROLE_ADMIN" vào table role khi chạy spring boot:
+        // INSERT INTO roles VALUES('ROLE_ADMIN');
         Role roles = roleRepository.findByName("ROLE_ADMIN").get();
         user.setRoles(Collections.singleton(roles));
 
