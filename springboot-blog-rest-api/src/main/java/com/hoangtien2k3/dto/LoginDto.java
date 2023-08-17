@@ -1,4 +1,4 @@
-package com.hoangtien2k3.SpringBootLoginRESTAPI.dto;
+package com.hoangtien2k3.dto;
 
 import lombok.Data;
 

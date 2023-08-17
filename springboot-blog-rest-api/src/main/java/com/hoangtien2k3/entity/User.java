@@ -1,4 +1,4 @@
-package com.hoangtien2k3.SpringBootLoginRESTAPI.model;
+package com.hoangtien2k3.entity;
 
 import lombok.Data;
 

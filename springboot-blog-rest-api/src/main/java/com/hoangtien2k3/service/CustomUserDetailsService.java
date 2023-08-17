@@ -1,7 +1,7 @@
-package com.hoangtien2k3.SpringBootLoginRESTAPI.service;
+package com.hoangtien2k3.service;
 
-import com.hoangtien2k3.SpringBootLoginRESTAPI.model.User;
-import com.hoangtien2k3.SpringBootLoginRESTAPI.repository.UserRepository;
+import com.hoangtien2k3.entity.User;
+import com.hoangtien2k3.repository.UserRepository;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
