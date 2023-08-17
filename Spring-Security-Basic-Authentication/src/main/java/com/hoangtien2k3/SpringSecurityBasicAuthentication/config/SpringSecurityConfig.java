@@ -33,16 +33,18 @@ public class SpringSecurityConfig {
     @Bean
     public UserDetailsService userDetailsService(){
 
+        // cấu hình username và password cho User
         UserDetails hoangtien2k3 = User.builder() // User.builder() : tạo ra đối tượng User
                 .username("hoangtien2k3")     // cập nhật Username
                 .password(passwordEncoder().encode("password")) // gọi hàm mã hóa password (BCrypt) và đặt mật khẩu
                 .roles("USER")          // Gán vai trò "USER" cho người dùng
                 .build();               // return UserDetails
 
+        // cấu hình username và password cho admin
         UserDetails admin = User.builder()
                 .username("admin")
                 .password(passwordEncoder().encode("admin"))
-                .roles("ADMIN")
+                .roles("ADMIN")     // cấp quyền admin
                 .build();
 
         //  là một triển khai của UserDetailsService để quản lý người dùng trong bộ nhớ, được sử dụng trong môi trường phát triển hoặc môi trường đơn giản.
