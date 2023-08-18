@@ -1,5 +1,6 @@
 package com.hoangtien2k3.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -28,7 +29,7 @@ public class SecurityConfig {
 
     @Bean
     public static PasswordEncoder passwordEncoder(){
-        return new BCryptPasswordEncoder();
+        return new BCryptPasswordEncoder(); // dùng BCrypt mã hóa password
     }
 
     @Bean
@@ -47,6 +48,8 @@ public class SecurityConfig {
                                 .requestMatchers("/api/auth/**").permitAll()
                                 .anyRequest().authenticated()
                 );
+
         return http.build();
+
     }
 }
