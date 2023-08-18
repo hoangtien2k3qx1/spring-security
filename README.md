@@ -26,7 +26,16 @@
 
 - [FilterChainProxy](): Lớp này quản lý một chuỗi các bộ lọc bảo mật, chịu trách nhiệm cho việc thực hiện các chức năng bảo mật như xác thực và phân quyền.
 
+- [AuthenticationManagerBuilder](): AuthenticationManagerBuilder giúp bạn cấu hình các yếu tố liên quan đến việc xác thực.
+    - UserDetailsService: Bạn có thể cấu hình một UserDetailsService thông qua AuthenticationManagerBuilder. UserDetailsService sẽ được sử dụng để tìm kiếm thông tin người dùng từ nguồn dữ liệu như cơ sở dữ liệu hoặc danh sách người dùng cấu hình.
 
+    - PasswordEncoder: AuthenticationManagerBuilder cho phép bạn cấu hình một PasswordEncoder để mã hóa mật khẩu người dùng trước khi lưu vào cơ sở dữ liệu và để so sánh với mật khẩu đã mã hóa khi xác thực.
+
+    - AuthenticationProvider: Bạn có thể thêm các AuthenticationProvider vào AuthenticationManagerBuilder. Mỗi AuthenticationProvider chịu trách nhiệm xác thực cho một nguồn dữ liệu cụ thể, cho phép xác thực từ nhiều nguồn khác nhau.
+
+    - Cấu hình phân quyền (authorization): Mặc dù chủ yếu là về xác thực, AuthenticationManagerBuilder cũng có thể liên quan đến việc cấu hình phân quyền dựa trên người dùng đã xác thực.
+
+    - Cấu hình bổ sung: Bạn có thể thực hiện các cấu hình bổ sung liên quan đến quá trình xác thực như xác thực từ nhiều nguồn khác nhau, cấu hình đa yếu tố (multi-factor authentication), xử lý lỗi xác thực, và nhiều yếu tố khác.
 
 
 
