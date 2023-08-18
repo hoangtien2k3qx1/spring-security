@@ -12,12 +12,12 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-@Configuration
-@EnableWebSecurity
+@Configuration  // đánh dấu đây là file cấu hình
+@EnableWebSecurity  // ược sử dụng trong ứng dụng Spring Security để bật cấu hình bảo mật dựa trên web.
 public class SpringSecurity {
 
     @Autowired
-    private UserDetailsService userDetailsService;
+    private UserDetailsService userDetailsService; // sử dụng thằng UserDetailsService trong spring security
 
     @Bean
     public static PasswordEncoder passwordEncoder(){
@@ -30,7 +30,7 @@ public class SpringSecurity {
                 .authorizeHttpRequests((authorize) ->  // Đây là phần cấu hình phân quyền cho các HTTP request.
                         authorize.requestMatchers("/register/**").permitAll()   // Các phương thức requestMatchers được sử dụng để xác định các URL mà phân quyền
                                 .requestMatchers("/index").permitAll()          // index cũng được cho phép tất cả mọi người truy cập `permitAll()`
-                                .requestMatchers("/users").hasRole("ADMIN")     //  chỉ được phép truy cập bởi những người dùng có vai trò (role) là "ADMIN"
+                                .requestMatchers("/users").hasRole("ADMIN")     // chỉ "ADMIN" mới có thể truy cập
                 ).formLogin(form -> form
                                 .loginPage("/login")    // Trang đăng nhập sẽ được định hướng đến "/login"
                                 .loginProcessingUrl("/login")   // URL để xử lý quá trình đăng nhập.
@@ -43,7 +43,7 @@ public class SpringSecurity {
         return http.build();  // Trả về đối tượng SecurityFilterChain sau khi đã cấu hình.
     }
 
-    @Autowired
+    @Autowired // Nó được sử dụng để cấu hình việc xác thực (authentication) và ủy quyền (authorization) trong ứng dụng của bạn.
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth
                 .userDetailsService(userDetailsService)
