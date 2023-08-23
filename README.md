@@ -26,6 +26,9 @@ các quyền có thể là "ROLE_ADMIN", "ROLE_USER", "READ_PERMISSION", "WRITE_
 
 - [SecurityContextHolder](): Lớp này lưu trữ thông tin xác thực của người dùng hiện tại trong một ngữ cảnh bảo mật. Nó giúp bạn truy cập thông tin người dùng đã xác thực từ bất kỳ nơi nào trong ứng dụng.
 
+    - Lưu ý: sau khi người dùng đăng nhập thành công, thông tin xác thực sẽ được lưu trữ trong SecurityContextHolder, và khi người dùng truy cập các tài nguyên bảo mật, Spring Security sẽ kiểm tra thông tin này để đảm bảo rằng người dùng có quyền truy cập.
+
+
 - [SecurityConfigurerAdapter](): Lớp trừu tượng này cho phép bạn cấu hình các phần khác nhau của Spring Security thông qua việc ghi đè các phương thức.
 
 - [HttpSecurity](): Đối tượng này cho phép bạn cấu hình quyền hạn dựa trên các yếu tố như URL, HTTP method, vv. Bạn có thể xác định ai có thể truy cập vào các phần của ứng dụng.
