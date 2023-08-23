@@ -12,7 +12,10 @@
 
 - [UserDetails](): Giao diện này được sử dụng để mã hóa mật khẩu người dùng và kiểm tra tính đúng đắn của mật khẩu.
 
-- [GrantedAuthority](): Giao diện này đại diện cho quyền hạn của người dùng đã xác thực. Các quyền hạn này xác định quyền truy cập vào các phần của ứng dụng.
+- [GrantedAuthority](): là một giao diện trong Spring Security, đại diện cho các quyền (hoặc vai trò) được cấp cho người dùng. Giao diện này đại diện cho quyền hạn của người dùng đã xác thực. Các quyền hạn này xác định quyền truy cập vào các phần của ứng dụng.
+```java
+các quyền có thể là "ROLE_ADMIN", "ROLE_USER", "READ_PERMISSION", "WRITE_PERMISSION"...
+```
 
 - [SecurityContextHolder](): Lớp này lưu trữ thông tin xác thực của người dùng hiện tại trong một ngữ cảnh bảo mật. Nó giúp bạn truy cập thông tin người dùng đã xác thực từ bất kỳ nơi nào trong ứng dụng.
 
