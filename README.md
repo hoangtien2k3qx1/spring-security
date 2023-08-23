@@ -3,6 +3,13 @@
 ## Spring Security cung cấp nhiều lớp và thành phần cần thiết để xây dựng hệ thống bảo mật trong ứng dụng. Dưới đây là một số lớp và thành phần quan trọng trong Spring Security:
 
 - [AuthenticationManager](): Đây là giao diện chính để xác thực người dùng. Nó có nhiệm vụ xác minh thông tin đăng nhập và trả về một đối tượng Authentication đại diện cho người dùng đã xác thực.
+Thông tin thường bao gồm:
+    - [Principal](): Đại diện cho người dùng được xác thực.
+    - [Credentials](): Thường là mật khẩu hoặc chứng chỉ xác thực.
+    - [Authorities](): Các quyền hoặc vai trò mà người dùng đã xác thực sở hữu.
+    - [Details](): Thông tin chi tiết khác về người dùng sau quá trình xác thực.
+
+
 
 - [Authentication](): Đây là đối tượng mô tả thông tin xác thực của người dùng sau khi họ đăng nhập thành công. Nó bao gồm thông tin như tên người dùng, mật khẩu, quyền hạn, vv.
 
